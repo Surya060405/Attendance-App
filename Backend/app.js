@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
-const userModel = require('../models/user') ;
+const userModel = require('./models/user') ;
 const path = require('path') ;
 
 
