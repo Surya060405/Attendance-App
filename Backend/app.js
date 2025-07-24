@@ -17,14 +17,17 @@ app.use(express.json());
 app.use(cookieParser());
 
 // CORS , to allow frontend to gather cookies
-app.use(
-  cors({
-    origin: 'http://localhost:5173',
-    credentials: true, // Allow cookies to be sent
-  })
-);
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://attendanceapp-gamma.vercel.app'
+];
 
-app.use(express.static(path.join(__dirname,"/frontend/dist")))
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
+// app.use(express.static(path.join(__dirname,"/frontend/dist")))
 
 
 
@@ -63,6 +66,9 @@ const isLoggedin = function(req,res,next){
 
 }
 
+app.get('/', (req, res) => {
+  res.send('Backend is running ✅');
+});
 
 // REGISTER ROUTE
 app.post('/register', async (req, res) => {
