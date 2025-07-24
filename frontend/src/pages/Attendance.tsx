@@ -92,7 +92,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
       try {
         // Step 2: Check backend auth
-        const res = await fetch('http://localhost:3000/mark-attendance', {
+        const res = await fetch(`${API}/mark-attendance`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(user),
