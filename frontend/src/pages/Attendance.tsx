@@ -84,7 +84,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
      
 
-      if (distance > 100) {
+      if (distance > 300) {
         setLoading(false) ;
         setError("Access denied. You must be within 10 meters of EDC to mark attendance.");
         return;
