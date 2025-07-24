@@ -5,10 +5,8 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
-const userModel = require('./models/user') ;
-const path = require('path') ;
-
-
+const userModel = require('./models/user');
+const path = require('path');
 
 dotenv.config();
 const app = express();
@@ -16,15 +14,9 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-// CORS , to allow frontend to gather cookies
-const allowedOrigins = [
-  'http://localhost:5173',
-  'https://attendanceapp-gamma.vercel.app'
-];
-
 app.use(cors({
-  origin: allowedOrigins,
-  credentials: true
+  origin: "https://attendanceapp-gamma.vercel.app", 
+  credentials: true 
 }));
 
 // app.use(express.static(path.join(__dirname,"/frontend/dist")))
@@ -94,8 +86,8 @@ app.post('/register', async (req, res) => {
     res
       .cookie('token', token, {
         httpOnly: true,
-        sameSite: 'Lax',
-        secure: false, 
+        sameSite: 'None',
+        secure: true, 
       })
       .status(201)
       .send({ message: 'User Registered Successfully' });
@@ -125,8 +117,8 @@ app.post('/login', async (req, res) => {
     res
       .cookie('token', token, {
         httpOnly: true,
-        sameSite: 'Lax',
-        secure: false,
+        sameSite: 'None',
+        secure: true,
       })
       .status(200)
       .json({ message: 'Login Successful' });
