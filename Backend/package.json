@@ -1,10 +1,10 @@
 {
   "name": "attensys",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "dev" : "nodemon app.js" ,
-    "start": "node app.js",
+    "dev": "nodemon api/app.js ",
+    "start": "node api/app.js",
     "build": "cd frontend && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +22,7 @@
     "geolib": "^3.3.4",
     "googleapis": "^153.0.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.16.4"
+    "mongoose": "^8.16.4",
+    "serverless-http": "^3.2.0"
   }
 }
