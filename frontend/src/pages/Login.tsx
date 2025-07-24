@@ -2,7 +2,7 @@ import  { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-
+const API = import.meta.env.VITE_BACKEND_URL;
 
 
 const Login = () => {
@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     
     try{
-       const response = await fetch(`http://localhost:3000/login` , {
+       const response = await fetch(`${API}/login` , {
       method: "POST" ,
       headers: {
         "Content-Type" : "application/json" ,

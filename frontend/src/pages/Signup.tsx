@@ -1,6 +1,7 @@
 import  { useState } from "react";
 import { Link , useNavigate} from "react-router-dom";
 import { motion } from "framer-motion";
+const API = import.meta.env.VITE_BACKEND_URL;
 
 const Signup = () => {
 
@@ -15,7 +16,7 @@ const Signup = () => {
     e.preventDefault();
     
     try{
-       const response = await fetch(`http://localhost:3000/register` , {
+       const response = await fetch(`${API}/signup` , {
       method: "POST" ,
       headers: {
         "Content-Type" : "application/json" ,
