@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getDistance } from 'geolib';
+const API = import.meta.env.VITE_BACKEND_URL;
 
 const Attendance = () => {
   const [user, setUser] = useState({
@@ -32,7 +33,7 @@ const EDC_COORDS = {
 
 const checkLoggedIn = async () => {
   try {
-    const response = await fetch('http://localhost:3000/auth/check', {
+    const response = await fetch(`${API}/auth/check`, {
       credentials: 'include',
     });
 
