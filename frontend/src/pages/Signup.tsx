@@ -33,7 +33,7 @@ const Signup = () => {
        navigate('/mark-attendance')
         // or navigate("/success") if you have a separate success page
       } else {
-        alert("Registration failed: " + data);
+        alert("Registration failed: " + message);
       }
     }
     catch(error){
@@ -102,3 +102,4 @@ const Signup = () => {
 };
 
 export default Signup;
+
