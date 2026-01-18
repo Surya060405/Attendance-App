@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: "https://attendanceapp-gamma.vercel.app", 
+  origin: "https://attendance-app-teal.vercel.app", 
   credentials: true 
 }));
 
@@ -162,4 +162,5 @@ connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
   });
+
 });
