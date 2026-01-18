@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: "https://attendance-app-teal.vercel.app", 
+  origin: "https://attendanceapp-gamma.vercel.app", 
   credentials: true 
 }));
 
